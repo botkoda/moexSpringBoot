@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>moex</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Акиця</th>
+        <th>Выручка 1 год</th>
+        <th>Выручка 5й год</th>
+        <th>Выручка 10й год</th>
+        <th>Средний рост выручки 10 лет</th>
+        <th>Средний рост выручки 5 лет</th>
+        <th>Операц. прибыль 1 год</th>
+        <th>Операц. прибыль 5й год</th>
+        <th>Операц. прибыль 10й год</th>
+        <th>Прибыль на акцию 1 год</th>
+        <th>Прибыль на акцию 5й год</th>
+        <th>Прибыль на акцию 10й год</th>
+        <th>ROE</th>
+        <th>Баллы 10 лет</th>
+        <th>Баллы 5 лет</th>
+        <th>P/E</th>
+        <th>% годовых</th>
+        <th>Цена при 20% годовых</th>
+        <th>Цена</th>
+    </tr>
+    <tr th:each="share : ${moex}">
+        <td><a th:href="@{/moex/{ticket}(ticket=${share.getTicket()})}" th:text="${share.getTicket()}"
+               th:style="${share.getDesiredPrice()} > ${share.getPrice()} ? 'font-weight: bold;'">ticket</a></td>
+        <td th:text="${share.getCapitalCount1Year()}">points</td>
+        <td th:text="${share.getCapitalCount6Year()}">points</td>
+        <td th:text="${share.getCapitalCount10Year()}">points</td>
+        <td th:text="${share.getCapitalAvrPerYear()}">points</td>
+        <td th:text="${share.getCapitalAvrPerYear5()}">points</td>
+        <td th:text="${share.getOperatingIncomeCount1Year()}">points</td>
+        <td th:text="${share.getOperatingIncomeCount6Year()}">points</td>
+        <td th:text="${share.getOperatingIncomeCount10Year()}">points</td>
+        <td th:text="${share.getEpsCount1Year()}">points</td>
+        <td th:text="${share.getEpsCount6Year()}">points</td>
+        <td th:text="${share.getEpsCount10Year()}">points</td>
+        <td th:text="${share.getRoePercent10Year()}">points</td>
+        <td th:text="${share.getPoints()}">points</td>
+        <td th:text="${share.getPoints5()}"
+            th:style="${share.getPoints5()} > 4 ? 'color: green;' : 'color: black;'">points</td>
+        <td th:text="${share.getPE()}">points</td>
+        <td th:text="${share.getPercentYear()}">points</td>
+        <td th:text="${share.getDesiredPrice()}"
+            th:style="${share.getDesiredPrice()} > ${share.getPrice()} ? 'color: green;' : 'color: red;'">points</td>
+        <td th:text="${share.getPrice()}"
+            th:style="${share.getDesiredPrice()} > ${share.getPrice()} ? 'color: green;' : 'color: red;'">points</td>
+    </tr>
+</table>
+
+
+
+</body>
+</html>

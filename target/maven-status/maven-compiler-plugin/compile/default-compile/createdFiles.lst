@@ -1,0 +1,13 @@
+ru\shagaliev\moex\logic\MoexBuild.class
+ru\shagaliev\moex\logic\Parse.class
+ru\shagaliev\moex\dao\MoexDao.class
+ru\shagaliev\moex\logic\data\Capital.class
+ru\shagaliev\moex\logic\data\CleanIncome.class
+ru\shagaliev\moex\models\Moex.class
+ru\shagaliev\moex\logic\data\OperatingIncome.class
+ru\shagaliev\moex\logic\data\Price.class
+ru\shagaliev\moex\controllers\MoexController.class
+ru\shagaliev\moex\logic\data\NumberOfShares.class
+ru\shagaliev\moex\MoexApplication.class
+ru\shagaliev\moex\logic\data\RoePercent.class
+ru\shagaliev\moex\logic\data\Eps.class
